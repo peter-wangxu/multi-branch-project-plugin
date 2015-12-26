@@ -1,4 +1,8 @@
 <?jelly escape-by-default='true'?>
 <div>
     This plugin adds additional project types that create sub-projects for each branch using a shared configuration.
+    <br/><br/>
+    Note: Updating from versions 0.1.x and 0.2.x are not supported.  Update to
+    <a href="http://repo.jenkins-ci.org/releases/com/github/mjdetullio/jenkins/plugins/multi-branch-project-plugin/0.3/multi-branch-project-plugin-0.3.hpi">version 0.3</a>
+    and restart Jenkins before updating to the latest version.  This is not a requirement for new installs.
 </div>
