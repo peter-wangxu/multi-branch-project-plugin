@@ -218,7 +218,7 @@ public abstract class AbstractMultiBranchProject<P extends AbstractProject<P, B>
             if (getItem(disabledSubProject) == null) {
                 // Didn't find item, so don't add it to new list
                 // Do we have the encoded item though?
-                String encoded = Util.rawEncode(disabledSubProject);
+                String encoded = Util.rawEncode(disabledSubProject.replace("/", "-"));
 
                 if (getItem(encoded) != null) {
                     // Found encoded item, add encoded name to new list
@@ -584,7 +584,10 @@ public abstract class AbstractMultiBranchProject<P extends AbstractProject<P, B>
 
         for (SCMHead head : heads) {
             String branchName = head.getName();
-            String branchNameEncoded = Util.rawEncode(branchName);
+            //String branchNameEncoded = Util.rawEncode(branchName);
+            listener.getLogger().println("EMC-FIX: " + branchName + " is changing to " + branchName.replace("/", "-"));
+
+            String branchNameEncoded = Util.rawEncode(branchName.replace("/", "-"));
 
             listener.getLogger().println("Branch " + branchName + " encoded to " + branchNameEncoded);
 
