@@ -585,9 +585,10 @@ public abstract class AbstractMultiBranchProject<P extends AbstractProject<P, B>
         for (SCMHead head : heads) {
             String branchName = head.getName();
             //String branchNameEncoded = Util.rawEncode(branchName);
-            listener.getLogger().println("EMC-FIX: " + branchName + " is changing to " + branchName.replace("/", "-"));
+            String replacedName = branchName.replace("-", "--").replace("/", "-");
+            listener.getLogger().println("EMC-FIX: " + branchName + " is changing to " + replacedName);
 
-            String branchNameEncoded = Util.rawEncode(branchName.replace("/", "-"));
+            String branchNameEncoded = Util.rawEncode(replacedName);
 
             listener.getLogger().println("Branch " + branchName + " encoded to " + branchNameEncoded);
 
