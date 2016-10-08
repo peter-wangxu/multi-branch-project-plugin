@@ -51,7 +51,7 @@ public final class FreeStyleBranchProjectFactory
      */
     @Override
     public FreeStyleProject newInstance(Branch branch) {
-        FreeStyleProject project = new FreeStyleProject(getOwner(), branch.getEncodedName());
+        FreeStyleProject project = new FreeStyleProject(getOwner(), Utils.ReplaceUrlChar(branch.getName()));
         setBranch(project, branch);
         return project;
     }

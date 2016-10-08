@@ -51,7 +51,7 @@ public final class IvyBranchProjectFactory
      */
     @Override
     public IvyModuleSet newInstance(Branch branch) {
-        IvyModuleSet project = new IvyModuleSet(getOwner(), branch.getEncodedName());
+        IvyModuleSet project = new IvyModuleSet(getOwner(), Utils.ReplaceUrlChar(branch.getName()));
         setBranch(project, branch);
         return project;
     }

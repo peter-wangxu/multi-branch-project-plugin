@@ -59,7 +59,7 @@ public final class MatrixBranchProjectFactory
      */
     @Override
     public MatrixProject newInstance(Branch branch) {
-        MatrixProject project = new MatrixProject(getOwner(), branch.getEncodedName());
+        MatrixProject project = new MatrixProject(getOwner(), Utils.ReplaceUrlChar(branch.getName()));
         setBranch(project, branch);
         return project;
     }

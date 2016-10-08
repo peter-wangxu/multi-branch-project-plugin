@@ -51,7 +51,7 @@ public final class MavenBranchProjectFactory
      */
     @Override
     public MavenModuleSet newInstance(Branch branch) {
-        MavenModuleSet project = new MavenModuleSet(getOwner(), branch.getEncodedName());
+        MavenModuleSet project = new MavenModuleSet(getOwner(), Utils.ReplaceUrlChar(branch.getName()));
         setBranch(project, branch);
         return project;
     }
